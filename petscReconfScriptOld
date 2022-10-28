@@ -1,0 +1,10 @@
+#!/bin/bash
+
+filePattern="^arch*"
+
+for entry in $(ls $PETSC_DIR | grep "^arch" ); do
+	echo $(ls "$PETSC_DIR/$entry")
+	
+done
+
+$PETSC_DIR/arch-linux-c-debug/lib/petsc/conf/reconfigure-arch-linux-c-debug.py $PETSC_DIR/
