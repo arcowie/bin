@@ -3,12 +3,24 @@ if [ $1 = 'arch-linux-debug' ]; then
 	export PETSC_ARCH_LIB=/home/arcowie/petsc/arch-linux-c-debug/lib
 	export PETSC_ARCH_DIR=/home/arcowie/petsc/arch-linux-c-debug
 	export PETSC_ARCH=arch-linux-c-debug
+	export PKG_CONFIG_PATH="${PETSC_DIR}/${PETSC_ARCH}/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PATH="${PETSC_DIR}/${PETSC_ARCH}/bin:$PATH"
 fi
 
 if [ $1 = 'arch-linux-optim' ]; then
 	export PETSC_ARCH=arch-linux-optim
 	export PETSC_ARCH_LIB=/home/arcowie/petsc/arch-linux-optim/lib
 	export PETSC_ARCH_DIR=/home/arcowie/petsc/arch-linux-optim
+	export PKG_CONFIG_PATH="${PETSC_DIR}/${PETSC_ARCH}/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PATH="${PETSC_DIR}/${PETSC_ARCH}/bin:$PATH"
+fi
+
+if [ $1 = 'arch-linux-rdycore-debug' ]; then
+	export PETSC_ARCH=arch-linux-rdycore-debug
+	export PETSC_ARCH_LIB=/home/arcowie/petsc/arch-linux-rdycore-debug/lib
+	export PETSC_ARCH_DIR=/home/arcowie/petsc/arch-linux-rdycore-debug	
+	export PKG_CONFIG_PATH="${PETSC_DIR}/${PETSC_ARCH}/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PATH="${PETSC_DIR}/${PETSC_ARCH}/bin:$PATH"
 fi
 
 if [ $1 = 'arch-ablate-debug' ]; then
@@ -26,4 +38,13 @@ if [ $1 = 'arch-ablate-opt' ]; then
 	export PKG_CONFIG_PATH="${PETSC_DIR}/${PETSC_ARCH}/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export PATH="${PETSC_DIR}/${PETSC_ARCH}/bin:$PATH"
 fi
+
+if [ $1 = 'arch-linux-libceed-opt' ]; then
+	export PETSC_ARCH_LIB=/home/arcowie/petsc/arch-linux-libceed-opt/lib
+	export PETSC_ARCH_DIR=/home/arcowie/petsc/arch-linux-libceed-opt
+	export PETSC_ARCH=arch-linux-libceed-opt
+	export PKG_CONFIG_PATH="${PETSC_DIR}/${PETSC_ARCH}/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PATH="${PETSC_DIR}/${PETSC_ARCH}/bin:$PATH"
+fi
+
 

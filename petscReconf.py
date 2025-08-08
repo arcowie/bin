@@ -89,7 +89,7 @@ def runMake(arch, petscDir):
     #text that is checked to see if the make was successful
     makeTestWorked = '# No test results in'
     print(f'\nOn arch: {arch}\nRunning make\n')
-    result = sp.run(['make', '-f', './gmakefile', 'test', 'search="dm_impls_plex_test-ex5_0"' ], cwd=petscDir, capture_output=True, text=True)
+    result = sp.run(['make', '-j','8','-f', './gmakefile', 'test', 'search="dm_impls_plex_test-ex5_0"' ], cwd=petscDir, capture_output=True, text=True)
     if makeTestWorked in result.stdout:
         print(f'\nMake worked\n')
 
